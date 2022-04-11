@@ -1,0 +1,17 @@
+from flask import Blueprint, jsonify, request
+from api.middleware import login_required, read_token
+from api.models.db import db
+from api.models.review import Review
+
+reviews = Blueprint('reviews', 'reviews')
+
+@reviews.route('/<id>', methods=['POST'])
+@login_required
+def create():
+  data = request.get_json()
+  profile = read_token(request)
+  data['profile_id'] = profile['id']
+  review = Review(**data)
+  db.session.add(review)
+  db.session.commit()
+  return jsonify(review.serialize()), 201

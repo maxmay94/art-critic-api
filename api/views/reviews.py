@@ -15,4 +15,5 @@ def create():
   review = Review(**data)
   db.session.add(review)
   db.session.commit()
+  print(f'@@@ view: review @@@@ ',review)
   return jsonify(review.serialize()), 201 

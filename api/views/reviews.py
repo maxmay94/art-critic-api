@@ -5,13 +5,14 @@ from api.models.review import Review
 
 reviews = Blueprint('reviews', 'reviews')
 
-@reviews.route('/<id>', methods=['POST'])
+@reviews.route('/', methods=['POST'])
 @login_required
 def create():
+  print('------> createReview <-----')
   data = request.get_json()
   profile = read_token(request)
   data['profile_id'] = profile['id']
   review = Review(**data)
   db.session.add(review)
   db.session.commit()
-  return jsonify(review.serialize()), 201
+  return jsonify(review.serialize()), 201 

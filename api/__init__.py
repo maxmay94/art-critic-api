@@ -11,6 +11,7 @@ from api.models.review import Review
 
 # ============ Import Views ============
 from api.views.auth import auth
+from api.views.reviews import reviews
 
 cors = CORS()
 migrate = Migrate() 
@@ -26,6 +27,7 @@ def create_app(config):
 
   # ============ Register Blueprints ============
   app.register_blueprint(auth, url_prefix='/api/auth') 
+  app.register_blueprint(reviews, url_prefix='/api/reviews') 
 
   return app
 

@@ -35,11 +35,12 @@ def update(id):
   return jsonify(review.serialize()), 200
 
 
-@reviews.route('/all', methods=['GET'])
+@reviews.route('/index', methods=['GET'])
 @login_required
 def index():
   reviews = Review.query.all()
   return jsonify([review.serialize() for review in reviews]), 200
+
 
 @reviews.route('/<id>', methods=['DELETE'])
 @login_required

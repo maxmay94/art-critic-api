@@ -18,7 +18,7 @@ def create():
   return jsonify(review.serialize()), 201 
 
 
-@reviews.route('/<id>', methods=['PUT'])
+@reviews.route('/<id>/edit', methods=['PUT'])
 @login_required
 def update(id):
   data=request.get_json()

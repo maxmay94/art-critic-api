@@ -1,96 +1,40 @@
-# flask-api-auth-template
+# art critic.
 
-**Warning. This template should only be used if you are building out a Flask API.**
+Art critic is an app that gives users a random piece from the MET Museum API.
+The user then jots down their thoughts and moves on to the next one! 
+Users can then look at all of the reviews. 
+Art critic is meant to be a fun way to spend 5-10 minutes
 
-If you are building a Flask API back end, use the [Flask - React JWT Auth Template - Front End](https://github.com/SEI-Remote/flask-react-jwt-auth-template-frontend) to create the corresponding React App. 
+## Getting Started
+[Try art critic here!](https://art-critic.netlify.app/) <br />
+[Planning Materials](https://trello.com/b/8wUUanbW/art-critic)
 
-# Setup
 
-Clone the template with the command below. Be sure to replace `<name-of-your-app-here>` in the commands below with the name of your app!
+## Screenshots
 
-```bash
-git clone https://github.com/SEI-Remote/flask-api-auth-template.git <name-of-your-app-here>
-cd <name-of-your-app-here>
-```
+<img src="https://imgur.com/YZoYI0X.png" alt="Landing Page" width="400"/>
+<img src="https://imgur.com/qYLOT1L.png" alt="Write Review Page" height="400"/>
+<img src="https://imgur.com/PSa7uND.png" alt="Review Index Page" width="400"/>
 
-Once you are in the project directory:
+## Technologies Used  💻
 
-```bash
-rm -rf .git
-```
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![Slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)
+![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
+![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
 
-Re-initialize a git repository:
+## Next Steps
+- [] Edit post without leaving index page
+- [] add favorites
+- [] implement a like system for other posts
+- [] search for art by artist / date
 
-```bash
-git init
-```
-
-Use the GitHub CLI to create a new project repository on GitHub:
-
-```bash
-gh repo create <name-of-your-app-here>
-```
-
-# Getting Started
-
-Create a new virtual environment for your project. The dependencies involved in this configuration of Flask (Flask API) are a bit different, so you’ll want a fresh start with this environment. 
-
-```bash
-conda create -n your_app python=3.9
-```
-
-Next, activate your virtual environment with the command below. 
-
-```bash
-conda activate your_app
-```
-
-Once the environment is active, run the following command in your terminal.
-
-```bash
-pip3 install -r requirements.txt 
-```
-
-In your terminal, run the following command to create a **`.env`** in the base directory of your project.
-
-```bash
-touch .env
-```
-
-Add an **`APP_SECRET`** variable to your **`.env`** file.
-
-```
-APP_SECRET=supersecretkey
-```
-
-Next up in the **`.env`**, add a `DATABASE_URL` with the name of our project’s database.
-
-```
-DATABASE_URL='postgresql://localhost:5432/your_database'
-```
-
-Make sure your conda environment is active and hop into the `psql` shell. Please run the following commands one at a time.
-
-```
-psql
-```
-
-```
-create database your_database;
-```
-
-```
-\q
-```
-
-```bash
-python3 -m flask db init
-python3 -m flask db migrate
-python3 -m flask db upgrade
-```
-
-Run the following command to start your application. 
-
-```bash
-python3 app.py
-```
+## Special Thanks to The Metropolitan Museum of Art
+[MET API](https://metmuseum.github.io/)

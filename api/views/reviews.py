@@ -21,9 +21,10 @@ def create():
 @reviews.route('/<id>/edit', methods=['PUT'])
 @login_required
 def update(id):
-  data=request.get_json()
+  data = request.get_json()
   profile = read_token(request)
   review = Review.query.filter_by(id=id).first()
+  print(f'()()()()() UPDATE REVIEW CONTROLLER ()()()()()', data)
 
   if review.profile_id != profile["id"]:
     return "forbidden", 403
@@ -45,7 +46,6 @@ def index():
 @reviews.route('/<id>', methods=["GET"])
 @login_required
 def show(id):
-  profile = read_token(request)
   review = Review.query.filter_by(id=id).first()
   return jsonify(review.serialize()), 200
 

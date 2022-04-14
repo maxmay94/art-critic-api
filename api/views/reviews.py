@@ -42,6 +42,14 @@ def index():
   return jsonify([review.serialize() for review in reviews]), 200
 
 
+@reviews.route('/<id>', methods=["GET"])
+@login_required
+def show(id):
+  profile = read_token(request)
+  review = Review.query.filter_by(id=id).first()
+  return jsonify(review.serialize()), 200
+
+
 @reviews.route('/<id>', methods=['DELETE'])
 @login_required
 def delete(id):

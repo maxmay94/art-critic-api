@@ -24,7 +24,6 @@ def update(id):
   data = request.get_json()
   profile = read_token(request)
   review = Review.query.filter_by(id=id).first()
-  print(f'()()()()() UPDATE REVIEW CONTROLLER ()()()()()', data)
 
   if review.profile_id != profile["id"]:
     return "forbidden", 403
